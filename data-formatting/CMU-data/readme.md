@@ -1,0 +1,3 @@
+- Summer 2019
+- Written in Google Colab notebooks for formatting annotated patient-doctor conversational data.
+- I was formatting data to visualize using the Discursis software and also the brat annotation style.
