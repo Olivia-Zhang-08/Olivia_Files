@@ -1,0 +1,97 @@
+/*******************
+ * Olivia Zhang    *
+ * Problem Set 5   *
+ * CS50, Fall 2018 *
+ *******************/
+
+body
+{
+    padding-left: 29%;
+    padding-right: 29%;
+    padding-top: 1%;
+    background-image: url('background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header
+{
+    color: #A51C30;
+}
+
+main
+{
+    text-align: center;
+    flex: 1;
+}
+
+.profile
+{
+    width: 275px;
+    height: 290px;
+}
+
+div
+{
+    font-size: large;
+}
+
+.color
+{
+    background-color: rgba(255, 0, 200, 0.2);
+    background-size: 100px 400px;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+.padding
+{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+td
+{
+    width: 10%;
+}
+
+.carouselformat
+{
+    width: 50%;
+    height: 50%;
+}
+
+.largefont
+{
+    font-size: 40pt;
+}
+
+/*@media (max-width: 1200px)*/
+/*{*/
+/*    body*/
+/*    {*/
+/*        min-height: 100vh - env(safe-area-inset-bottom);*/
+/*    }*/
+/*}*/
+
+/*footer*/
+/*{*/
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+/*}*/
+
+/*@font-face
+{
+  font-family: 'MyWebFont';
+  src: url('myfont.ttf') format('truetype');
+} */
+
+/*resolution of picture, media query; whenever max width is less than 1200px apply things; if smaller than width, constrain height; if smaller than height, constrain width*/
+/*John*/
