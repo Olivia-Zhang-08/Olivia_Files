@@ -1,0 +1,15 @@
+//unsigned int hash(const char *word)
+//{
+    //return tolower(word[0]) - 'a';
+//}
+
+
+unsigned int hash(const char *word)
+{
+    unsigned long hashnum = 5381;
+    for (const char* ptr = word; *ptr != '\0'; ptr++)
+    {
+        hashnum = ((hashnum << 5) + hashnum) + tolower(*ptr);
+    }
+    return hashnum % numbuckets;
+}
