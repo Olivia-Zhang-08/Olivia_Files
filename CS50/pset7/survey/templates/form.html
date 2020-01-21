@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" name="myform" onsubmit="return validateform()">
+
+        <!-- make form -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="FULL NAME" type="text">
+        </div>
+        <div>
+            <h5>Where do you want to study?</h5>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" id="Hogwarts" name="school" type="radio" value="Hogwarts">
+                <label class="form-check-label" for="Hogwarts">Hogwarts School of Witchcraft and Wizardry</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Beauxbatons" name="school" type="radio" value="Beauxbatons">
+                <label class="form-check-label" for="Beauxbatons">Beauxbatons Academy of Magic</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Castelobruxo" name="school" type="radio" value="Castelobruxo">
+                <label class="form-check-label" for="Castelobruxo">Castelobruxo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Durmstrang" name="school" type="radio" value="Durmstrang">
+                <label class="form-check-label" for="Durmstrang">Durmstrang Institute</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Ilvermorny" name="school" type="radio" value="Ilvermorny">
+                <label class="form-check-label" for="Ilvermorny">Ilvermorny School of Witchcraft and Wizardry</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Mahoutokuro" name="school" type="radio" value="Mahoutokuro">
+                <label class="form-check-label" for="Mahoutokuro">Mahoutokuro</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Uagadou" name="school" type="radio" value="Uagadou">
+                <label class="form-check-label" for="Uagadou">Uagadou School of Magic</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" id="Koldovstoretz" name="school" type="radio" value="Koldovstoretz">
+                <label class="form-check-label" for="Koldovstoretz">Koldovstoretz</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="subject">
+                <option disabled selected value>SUBJECT YOU WANT TO LEARN</option>
+                <option value="Transfiguration">Transfiguration</option>
+                <option value="Defense Against the Dark Arts">Defense Against the Dark Arts</option>
+                <option value="Charms">Charms</option>
+                <option value="Potions">Potions</option>
+                <option value="Astronomy">Astronomy</option>
+                <option value="History of Magic">History of Magic</option>
+                <option value="Herbology">Herbology</option>
+                <option value="Arithmancy">Arithmancy</option>
+                <option value="Study of Ancient Runes">Study of Ancient Runes</option>
+                <option value="Divination">Divination</option>
+                <option value="Care of Magical Creatures">Care of Magical Creatures</option>
+                <option value="Muggle Studies">Muggle Studies</option>
+                <option value="Alchemy">Alchemy</option>
+                <option value="Apparition">Apparition</option>
+            </select>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <!-- Validate submission -->
+    <script>
+        function validateform()
+        {
+            var namecheck = document.forms["myform"]["name"].value;
+            var schoolcheck = document.forms["myform"]["school"].value;
+            var subjectcheck = document.forms["myform"]["subject"].value;
+
+            if (namecheck == "" || schoolcheck == "" || subjectcheck == "")
+            {
+                alert("Please fill out all fields!");
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

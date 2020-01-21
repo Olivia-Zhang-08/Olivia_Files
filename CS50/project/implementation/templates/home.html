@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!--Home page-->
+    <h2>Emotions and colors are often associated with each other.</h1>
+    <h2>Colors can be broken down into color components.</h1>
+    <h2>Can they be broken down into emotional components?</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/begin" method="post" name="begin">
+
+        <!-- submit button -->
+        <div>
+            <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+            <button class="btn btn-outline-dark" type="submit">Find out</button>
+        </div>
+    </form>
+
+{% endblock %}

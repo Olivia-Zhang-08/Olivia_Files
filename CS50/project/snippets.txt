@@ -1,0 +1,34 @@
+
+color_dist_dict = {}
+for i in range(len(colorNames_list)):
+        color_dist_dict[colorNames_list[i]] = dists_list[i]
+    # colorNames_list = []
+    # for col in range(len(colorNames)):
+    #     colorNames_list.append(colorNames[col]['colorName'])
+    # color_dist_dict = {}
+    # dict_list = []
+    # for i in range(len(colorNames_list)):
+    #     color_dist_dict[colorNames_list[i]] = dists_list[i]
+        # dict_list.append(color_dist_dict[colorNames_list[i]] = dists_list[i]
+        # print(dict([(colorNames_list[i] , dists_list[i])]))
+        # dict_list.append(dict([(colorNames_list[i] , dists_list[i])]))
+    # print(dict_list)
+    # print sorted(dict_list, key=itemgetter(''))
+
+
+
+    # List of percentages
+    # percent_list = []
+    # sumList = sum(dists_list)
+    # for d in dists_list:
+    #     percent_list.append("%.1f%%" % (100 * d / sumList))
+    # print(percent_list)
+    # return render_template("results.html", students=students)
+
+# # Read survey.csv and display the submissions to a table
+# @app.route("/results", methods=["GET"])
+# def get_results():
+#     # file = open("survey.csv", "r")
+#     # reader = csv.reader(file)
+#     # students = list(reader)
+#     return render_template("results.html", students=students)

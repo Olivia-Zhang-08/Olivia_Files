@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2>
+        Based on the color components of <svg width="60" height="60"><rect width="60" height="60" style="fill:{{ color }};stroke-width:3;stroke:rgb(0,0,0)"/></svg>
+        as well as preliminary survey data, here are the top 3 associated-emotion components of your color:
+    </h2>
+    <table class="width" align="center">
+        <!--First row: output the top 3 percents that were calculated in application.py-->
+        <tr>
+            <td>
+                {{ percs[0] }}
+            </td>
+            <td>
+                {{ percs[1] }}
+            </td>
+            <td>
+                {{ percs[2] }}
+            </td>
+        </tr>
+        <!--Second row: output the corresponding 3 emotions and the colors they were associated with from the data collection-->
+        <tr>
+            <td>
+                {% if rgbs[0] == '255,255,255' -%}
+                    <span style="color:rgb({{ rgbs[0] }});background-color:rgb(232,232,232)">{{ emos[0] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[0] }});background-color:rgb(232,232,232)">{{ cols[0] }}</span></h5>
+                {% else -%}
+                    <span style="color:rgb({{ rgbs[0] }})">{{ emos[0] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[0] }}">{{ cols[0] }}</span></h5>
+                {%- endif %}
+            </td>
+            <td>
+                {% if rgbs[1] == '255,255,255' -%}
+                    <span style="color:rgb({{ rgbs[1] }});background-color:rgb(232,232,232)">{{ emos[1] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[1] }});background-color:rgb(232,232,232)">{{ cols[1] }}</span></h5>
+                {% else -%}
+                    <span style="color:rgb({{ rgbs[1] }})">{{ emos[1] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[1] }}">{{ cols[1] }}</span></h5>
+                {%- endif %}
+            </td>
+            <td>
+                {% if rgbs[2] == '255,255,255' -%}
+                    <span style="color:rgb({{ rgbs[2] }});background-color:rgb(232,232,232)">{{ emos[2] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[2] }});background-color:rgb(232,232,232)">{{ cols[2] }}</span></h5>
+                {% else -%}
+                    <span style="color:rgb({{ rgbs[2] }})">{{ emos[2] }}</span>
+                    <h5>as associated with <span style="color:rgb({{ rgbs[2] }}">{{ cols[2] }}</span></h5>
+                {%- endif %}
+            </td>
+        </tr>
+    </table>
+    <form action="/form" method="get" name="myForm">
+        <!-- make form -->
+        <div class="paddingform">
+            <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+            <button class="btn btn-outline-dark" type="submit">Pick different color</button>
+        </div>
+    </form>
+
+{% endblock %}

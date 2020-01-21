@@ -1,0 +1,66 @@
+<!--{% extends "layout.html" %}-->
+
+<!--{% block title %}-->
+<!--    Sell-->
+<!--{% endblock %}-->
+
+<!--{% block main %}-->
+<!--    <form action="/sell" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <input autocomplete="off" class="form-control" min="1" name="shares" placeholder="Shares" type="number">-->
+<!--        </div>-->
+<!--        <button class="btn btn-primary" type="submit">Sell</button>-->
+<!--    </form>-->
+<!--{% endblock %}-->
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+     <form action="/sell" method="post">
+        <div class="form-group">
+            <select class="form-control" name="symbol">
+                <option disabled selected value="">Symbol</option>
+                    {% for symbol in symbols %}
+                    <option value="{{ symbol[0]["Symbol"] }}">{{ symbol[0]["Symbol"] }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" min="0" name="shares" placeholder="Shares" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
+
+# symbols = db.execute("SELECT Symbol FROM history WHERE user_id = :user_id", user_id=session["user_id"])
+    # symbols_list = []
+    # shares = db.execute("SELECT Shares FROM history WHERE id = :user_id", user_id=session["user_id"])
+    # shares_list = []
+    # prices = db.execute("SELECT Price FROM history WHERE id = :user_id", user_id=session["user_id"])
+    # prices_list = []
+    # timestamps = db.execute("SELECT Transacted FROM history WHERE id = :user_id", user_id=session["user_id"])
+    # timestamps_list = []
+    # length = len(symbols)
+    # for i in range(length):
+    #     symbols_list.append(symbols[i])
+    #     shares_list.append(shares[i])
+    #     prices_list.append(prices[i])
+    #     timestamps_list.append(timestamps[i])
+    # return render_template("history.html", symbols=symbols_list, shares=shares_list, prices=prices_list, timestamps=timestamps_list, length=length)
+
+    # # names_list = []
+    # prices_list=[]
+    # for symbol in shares:
+    #     # names_list.append(lookup(share["Symbol"])["name"])
+    #     prices_list.append(lookup(share["Symbol"])["price"])
+    #     total_shares_in_comp = (db.execute("SELECT SUM(Shares) FROM portfolio WHERE Symbol = :symbol AND user_id = :user_id", symbol=share["Symbol"], \
+    #                                                 user_id=session["user_id"]))[0]["SUM(Shares)"]
+    #     total_shares_in_comp_list.append(total_shares_in_comp)

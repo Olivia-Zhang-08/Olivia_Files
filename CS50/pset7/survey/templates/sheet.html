@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Sheet</h1>
+    <table class="table">
+        <tr>
+            <th>Student</th>
+            <th>School of Choice</th>
+            <th>Subject of Choice</th>
+        </tr>
+        {% for i in range(students|length) %}
+            <tr>
+                {% for j in range(3) %}
+                    <td>{{ students[i][j] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

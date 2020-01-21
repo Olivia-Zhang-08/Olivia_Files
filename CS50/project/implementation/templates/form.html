@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <script src="/static/scripts/colorpick.js"></script>
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Pick a color, any color...</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" name="myform" >
+
+        <!-- make form -->
+        <div class="paddingform">
+            <div class="form-group">
+                <!--use and modify the imported Spectrum colorpicker input function, automatic initial color is white; see static/script/colorpick.js for script-->
+                <input id='colorpicker' name="colorselection" value="rgb(255,255,255)"></input>
+            </div>
+        </div>
+        <div class="paddingform">
+            <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+            <button class="btn btn-outline-dark" type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}
